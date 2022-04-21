@@ -13,19 +13,22 @@ Our goal is to leverage our data to identify fradulent transactions based on 28 
 Here, we used the Isolation Forest Algorithm and Local Outlier Factor for anomaly detections and predict outliers.
 Isolation Forest is a machine learning algorithm for anomaly detection that identified anomaly by isolating outliers in the data (a.k.a. fradulent transactions in our case). The Local Outlier Factor is an unsurpervised outlier detection method which calculates the anomaly score of each outlier. 
 
-* Advantages of Isolation Forest
+### Isolation Forest
+* Advantages
 
 It has the ability to detect anomalies pureply based on the concept of isolation without employing any distance or density measure — fundamentally different from all existing methods. It also has the ability to exploit subsampling to achieve a low linear time-complexity and a small memory-requirement, and to deal with the effects of swamping and masking effectively, which allows us to improve detection rates.
 
-* Disadvantages of Isolation Forest
+* Disadvantages
 
 While Isolation Forest contains many advantages, it has a disadvantage in detecting local anomaly point, which affects the accuracy of the algorithm. The final anomaly score depends on the contamination parameter, provided while training the model. This implies that we should have an idea of what percentage of the data is anomalous beforehand to get a better prediction. Also, the model suffers from a bias due to the way the branching takes place. 
 
-* Advantages of LOF
+### Local Outlier Factor (LOF)
+
+* Advantages
 
 A point will be considered as an outlier if it is at a small distance to the extremely dense cluster. The global approach may not consider that point as an outlier. But the LOF can effectively identify the local outliers.
 
-* Disadvantages of LOF
+* Disadvantages
  
 Since LOF is a ratio, it is tough to interpret. There is no specific threshold value above which a point is defined as an outlier. The identification of an outlier is dependent on the problem and the user.
 
